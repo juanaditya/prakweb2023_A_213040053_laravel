@@ -33,12 +33,43 @@ Route::get('/posts', function () {
     $blog_posts = [
         [
             "title" => "Judul Post Pertama",
+            "slug" => "Judul-Post Pertama",
             "author" => "Juan",
-            "blog" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur corrupti maxime, quibusdam quidem, non temporibus sint consequatur repellat assumenda laborum quasi explicabo officiis quis iusto? Odit doloremque aperiam neque nulla."
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur corrupti maxime, quibusdam quidem, non temporibus sint consequatur repellat assumenda laborum quasi explicabo officiis quis iusto? Odit doloremque aperiam neque nulla."
         ],
     ];
+
     return view('Posts', [
         "title" => "Post",
         "posts" => $blog_posts
+    ]);
+});
+
+
+
+
+
+//Halaman Single Post
+Route::get('posts/{slug}', function ($slug) {
+    $blog_posts = [
+        [
+            "title" => "Judul Post Pertama",
+            "slug" => "Judul-Post Pertama",
+            "author" => "Juan",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur corrupti maxime, quibusdam quidem, non temporibus sint consequatur repellat assumenda laborum quasi explicabo officiis quis iusto? Odit doloremque aperiam neque nulla."
+        ],
+    ];
+
+    $new_post = [];
+
+    foreach ($blog_posts as $post) {
+        if ($post["slug"] === $slug) {
+            $new_post = $post;
+        }
+    }
+
+    return view('post', [
+        "title" => "Single Post",
+        "post" => $new_post
     ]);
 });
