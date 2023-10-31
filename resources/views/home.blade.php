@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan Blog</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+@section('container')
 
-<body>
-  <h1>Halaman Home</h1>
+<h1>Halaman Home</h1>
 
-  <script src="js/script.js"></script>
-</body>
-
-</html>5
+@endsection
