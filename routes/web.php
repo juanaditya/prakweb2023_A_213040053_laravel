@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,60 +17,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-
 Route::get('/about', function () {
     return view('About', [
         "title" => "About",
-        "name" => "Juan Aditya",
-        "email" => "juanaditya77@gmail.com",
+        "name" => "Juan",
+        "email" => "Juan",
         "image" => "juan.png"
     ]);
 });
 
 
-
-
 Route::get('/posts', function () {
-    $blog_posts = [
-        [
-            "title" => "Judul Post Pertama",
-            "slug" => "Judul-Post Pertama",
-            "author" => "Juan",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur corrupti maxime, quibusdam quidem, non temporibus sint consequatur repellat assumenda laborum quasi explicabo officiis quis iusto? Odit doloremque aperiam neque nulla."
-        ],
-    ];
-
     return view('Posts', [
         "title" => "Post",
-        "posts" => $blog_posts
+        "posts" => Post::all()
     ]);
 });
 
 
-
-
-
 //Halaman Single Post
 Route::get('posts/{slug}', function ($slug) {
-    $blog_posts = [
-        [
-            "title" => "Judul Post Pertama",
-            "slug" => "Judul-Post Pertama",
-            "author" => "Juan",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur corrupti maxime, quibusdam quidem, non temporibus sint consequatur repellat assumenda laborum quasi explicabo officiis quis iusto? Odit doloremque aperiam neque nulla."
-        ],
-    ];
-
-    $new_post = [];
-
-    foreach ($blog_posts as $post) {
-        if ($post["slug"] === $slug) {
-            $new_post = $post;
-        }
-    }
-
     return view('post', [
         "title" => "Single Post",
-        "post" => $new_post
+        "post" => Post::find($slug),
     ]);
 });
