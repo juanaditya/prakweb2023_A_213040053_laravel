@@ -16,94 +16,42 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         User::create([
             'name' => 'Juan',
-            'email' => 'juanaditya77@gmail.com',
-            'password' => bcrypt('wikarma')
+            'username' => 'juandt',
+            'email' => 'juan77@gmail.com',
+            'password' => bcrypt('12345')
         ]);
+
+
 
         User::factory(3)->create();
 
         Category::create([
             'name' => 'Web Programming',
-            'slug' => 'Web-P'
+            'slug' => 'web-programming'
         ]);
 
         Category::create([
             'name' => 'Web Design',
-            'slug' => 'W-Design'
+            'slug' => 'web-design'
         ]);
 
         Category::create([
-            'name' => 'Programming',
-            'slug' => 'Programming'
+            'name' => 'Personal',
+            'slug' => 'personal'
         ]);
 
         Post::factory(20)->create();
+
         // Post::create([
-        //     'title' => 'Judul 1',
-        //     'slug' => 'judul-1',
-        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto amet pariatur, repudiandae quibusdam quia modi et optio sapiente assumenda beatae voluptate sunt ducimus velit quod qui eum, rerum nulla earum!',
-        //     'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni corrupti velit dolore, optio voluptates quas ratione architecto ut quidem fugit atque asperiores amet. Mollitia quas, alias rerum officia iusto porro.',
+        //     'title' => 'Judul Pertama',
+        //     'slug' => 'judul-pertama',
+        //     'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+        //     'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis totam nisisaepe dignissimos perspiciatis facere esse perferendis, nulla libero iure fugit quis distinctio impedit veritatis necessitatibus quasi sunt.',
         //     'category_id' => 1,
         //     'user_id' => 1
         // ]);
 
-        // Post::create([
-        //     'title' => 'Judul 2',
-        //     'slug' => 'judul-2',
-        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto amet pariatur, repudiandae quibusdam quia modi et optio sapiente assumenda beatae voluptate sunt ducimus velit quod qui eum, rerum nulla earum!',
-        //     'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni corrupti velit dolore, optio voluptates quas ratione architecto ut quidem fugit atque asperiores amet. Mollitia quas, alias rerum officia iusto porro.',
-        //     'category_id' => 1,
-        //     'user_id' => 1
-        // ]);
-
-        // Post::create([
-        //     'title' => 'Judul 3',
-        //     'slug' => 'judul-3',
-        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto amet pariatur, repudiandae quibusdam quia modi et optio sapiente assumenda beatae voluptate sunt ducimus velit quod qui eum, rerum nulla earum!',
-        //     'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni corrupti velit dolore, optio voluptates quas ratione architecto ut quidem fugit atque asperiores amet. Mollitia quas, alias rerum officia iusto porro.',
-        //     'category_id' => 2,
-        //     'user_id' => 2
-        // ]);
-
-        // User::create([
-        //     'name' => 'Aasdasda',
-        //     'email' => 'asdasdas@asda.cc',
-        //     'password' => bcrypt('123123')
-        // ]);
-
-        // Post::create([
-        //     'title' => 'Judul 1',
-        //     'slug' => 'judul-1',
-        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto amet pariatur, repudiandae quibusdam quia modi et optio sapiente assumenda beatae voluptate sunt ducimus velit quod qui eum, rerum nulla earum!',
-        //     'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni corrupti velit dolore, optio voluptates quas ratione architecto ut quidem fugit atque asperiores amet. Mollitia quas, alias rerum officia iusto porro.',
-        //     'category_id' => 1,
-        //     'user_id' => 1
-        // ]);
-
-        // Post::create([
-        //     'title' => 'Judul 2',
-        //     'slug' => 'judul-2',
-        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto amet pariatur, repudiandae quibusdam quia modi et optio sapiente assumenda beatae voluptate sunt ducimus velit quod qui eum, rerum nulla earum!',
-        //     'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni corrupti velit dolore, optio voluptates quas ratione architecto ut quidem fugit atque asperiores amet. Mollitia quas, alias rerum officia iusto porro.',
-        //     'category_id' => 1,
-        //     'user_id' => 1
-        // ]);
-
-        // Post::create([
-        //     'title' => 'Judul 3',
-        //     'slug' => 'judul-3',
-        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto amet pariatur, repudiandae quibusdam quia modi et optio sapiente assumenda beatae voluptate sunt ducimus velit quod qui eum, rerum nulla earum!',
-        //     'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni corrupti velit dolore, optio voluptates quas ratione architecto ut quidem fugit atque asperiores amet. Mollitia quas, alias rerum officia iusto porro.',
-        //     'category_id' => 2,
-        //     'user_id' => 2
-        // ]);
     }
 }
